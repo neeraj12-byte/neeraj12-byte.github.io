@@ -26,13 +26,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-2 bg-[#059669]/10 border border-[#059669]/20 rounded-full px-3 py-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#059669] animate-pulse" />
                 <span className="font-sans text-xs font-medium text-[#059669]">
-                  Seeking Fall 2026 Internships
-                </span>
-              </div>
-              <div className="inline-flex items-center gap-2 bg-[#059669]/10 border border-[#059669]/20 rounded-full px-3 py-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#059669] animate-pulse" />
-                <span className="font-sans text-xs font-medium text-[#059669]">
-                  Seeking Full-time Job Opportunities
+                  Seeking Full-time Program/Project Manager Roles
                 </span>
               </div>
             </motion.div>
@@ -52,7 +46,7 @@ export default function Hero() {
               transition={{ duration: 0.4, delay: 0.25 }}
               className="font-sans text-[17px] text-[#6B6B6B] mb-6"
             >
-              EPM Intern · Apple · Cupertino, CA
+              M.E.M. Candidate, Purdue · Ex-Apple EPM Intern
             </motion.p>
 
             <motion.p

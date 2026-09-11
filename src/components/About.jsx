@@ -54,14 +54,14 @@ export default function About() {
                 <p>
                   Three years at{' '}
                   <span className="text-[#1C1C1E] font-medium">OLA Electric</span>{' '}
-                  answered that fast. Three roles, three years, one company building the future of electric mobility in real time. I shipped MOVE OS to a million customers, delivered 22,000 chargers, and built an ABS system that saved $2.8M. It was intense, real, and addictive.
+                  answered that fast. Three roles, three years, one company building the future of electric mobility in real time. I shipped Vehicle OS to a million customers, delivered 30,000 EV chargers, and built an ABS system that saved $3M. It was intense, real, and addictive.
                 </p>
                 <p>
                   Then came{' '}
-                  <span className="text-[#1C1C1E] font-medium">Purdue</span>{' '}
-                  , a chance to build the strategic layer. How to think about systems, not just execute inside them. And now I'm here at{' '}
+                  <span className="text-[#1C1C1E] font-medium">Purdue</span>
+                  , a chance to build the strategic layer, how to think about systems, not just execute inside them, followed by a summer running Pricing Platform programs and shipping AI agents at{' '}
                   <span className="text-[#1C1C1E] font-medium">Apple in Cupertino</span>
-                  , running Pricing Platform programs and shipping AI agents that actually work.
+                  . Now I'm back at Purdue finishing my Master's, mentoring the next cohort of Data Mine PMs, and looking for where I land next full-time.
                 </p>
                 <p>
                   Outside work, I run the same playbook I use at a poker table: read the table, manage risk, and make decisions with incomplete information. I play basketball (school team back in the day), travel every chance I get, 11 states in under a year, and yes, I've gone scuba diving. Quietest place I've ever been.

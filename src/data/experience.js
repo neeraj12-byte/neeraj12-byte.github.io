@@ -3,13 +3,14 @@ export const primaryExperience = [
     id: 'apple',
     company: 'Apple',
     role: 'Engineering Program Manager Intern',
-    period: 'May 2026 – Present',
+    period: 'May 2026 – Aug 2026',
     location: 'Cupertino, CA',
     team: 'Services Engineering, Rights & Pricing',
     bullets: [
-      'Orchestrating 15+ live Pricing Platform programs across 30+ cross-functional stakeholders in Apple Services Engineering',
-      'Own end-to-end program visibility: real-time dashboards, Kanban systems, and 70+ active work items tracked across parallel workstreams',
-      'Building AI agents, MCP servers, and workflow automation tooling using Claude Code, shipped since week one',
+      'Owned 18 of the Pricing Program\'s 36-project portfolio spanning 10 country storefronts, hitting every regulatory compliance deadline on time and protecting market access for 50M+ users and $1B in associated revenue',
+      'Ran weekly cross-functional syncs and maintained Kanban dashboards tracking 180+ active work items, identifying and resolving 20+ cross-team blockers and dependencies while briefing Director-level leadership on program health and risk',
+      'Shipped a real-time status-tracking feature for the Pricing Program\'s project management tool, consolidating updates across 125 projects for nearly 100 cross-functional users, saving EPMs roughly 3 hours per week previously spent chasing status',
+      'Introduced a work-breakdown framework, using a custom Claude Code skill, that decomposes specs into a project backlog, cutting spec-to-backlog turnaround from 48 hours to 4 hours and surfacing 25% more trackable work items across 2 pilot projects',
     ],
     logo: 'apple',
   },
@@ -22,27 +23,27 @@ export const primaryExperience = [
     team: '',
     subroles: [
       {
-        title: 'TPM – InHouse ABS',
-        period: 'May 2024 – Jun 2025',
-        bullets: [
-          'Developed OLA\'s first in-house ABS system, saved $2.8M in vendor costs and eliminated a critical third-party dependency',
-          'Delivered 99.2% system reliability; drove NPS +22.6 pts and 16.4% reduction in customer acquisition cost',
-        ],
-      },
-      {
-        title: 'Software Project Lead – InHouse Charger',
+        title: 'Technical Program Manager – EV Charger',
         period: 'Jun 2023 – May 2024',
         bullets: [
-          '22K+ EV chargers delivered on schedule and 8.4% under budget across India',
-          'Cut post-release defects 34% by implementing CI/CD pipeline; reduced cycle time by 12%',
+          'Saved $3M in vendor costs by owning an in-house EV Charger program end-to-end, leading an 8-member hardware, software, and mechanical engineering team from concept to launch in 16 months, less than half the industry-typical 3-year cycle',
+          'Directed supplier selection and component sourcing across 10 vendors, negotiating costs while coordinating cross-functional teams to deliver 30,000 EV chargers to production, and establishing release governance that cut post-launch defects by 15%',
         ],
       },
       {
-        title: 'Software Model Developer – Vehicle OS',
+        title: 'Software Project Lead – Anti-lock Braking System (ABS)',
+        period: 'May 2024 – Jun 2025',
+        bullets: [
+          'Delivered controls software for 22K+ ABS units, reducing the project cycle time by 12% and completing the development 10% under budget by mitigating risks, streamlining workflows across engineering and QA, and optimizing resources',
+          'Invented and filed a patent application for a deceleration-based wheel-lock detection algorithm that replaced a physical brake switch and dual wheel-speed sensors with a single signal, achieving 99.2% detection accuracy across bench and field testing',
+        ],
+      },
+      {
+        title: 'Software Developer – Vehicle OS',
         period: 'Jul 2022 – Jun 2023',
         bullets: [
-          'Shipped MOVE OS 3 on Simulink, 88% adoption across 1M+ customers; won Outstanding New Hire Award',
-          'Built 100+ KPI dashboards on Vector CANalyzer + JIRA to track vehicle software health across the fleet',
+          'Coordinated with product, engineering, QA, and technicians to deliver Vehicle OS 3 features through Simulink modeling, briefed leadership on progress, and drove 88% adoption across 1M+ customers, winning the Outstanding New Hire Award',
+          'Defined and built a 100+ metric KPI tracking framework (Vector CANoe, JIRA) for the program, turning raw data into insights that resolved 90% of critical software issues, reduced customer complaints by 30%, and saved $100,000 in support costs',
         ],
       },
     ],
@@ -51,13 +52,13 @@ export const primaryExperience = [
   {
     id: 'datamine',
     company: 'Purdue Data Mine',
-    role: 'Project Manager',
-    period: 'Jan 2026 – Present',
+    role: 'Program Manager (Prev. Project Manager)',
+    period: 'Jan 2026 – Apr 2026 & Sep 2026 – Present',
     location: 'West Lafayette, IN',
     team: '',
     bullets: [
-      'Leading agile delivery of 3 hydrogen infrastructure scenarios across 5 Midwestern states, with GIS-based visualizations used by industry stakeholders for real investment decisions',
-      'Running sprint planning, backlog management, and stakeholder presentations for a cross-disciplinary team',
+      'Mentor 5 student project managers on core PM fundamentals, from sprint cadence to sponsor communication, while acting as their escalation path for issues outside their authority and briefing Data Mine leadership on portfolio status and health',
+      'Led a 9-student team through scope definition, sprint execution, and status reporting to corporate sponsors, delivering a working prototype hydrogen-infrastructure decision-support platform projected to impact 20,000+ freight truck trips annually',
     ],
     logo: 'purdue',
   },

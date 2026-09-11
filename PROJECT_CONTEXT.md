@@ -1,19 +1,21 @@
 # Portfolio Website — Project Context
 > Read this file at the start of any session to restore full context.
-> Last updated: July 14, 2026
+> Last updated: September 11, 2026
 
 ---
 
 ## Who This Is For
 **Neeraj Karumanchi**
-- Engineering Program Manager Intern @ Apple (May 2026–Present), Cupertino, CA
-- Former Technical Product Manager @ OLA Electric (3 yrs), Bengaluru, India
+- Engineering Program Manager Intern @ Apple, Cupertino, CA (May 2026–Aug 2026, completed) — seeking full-time PM/TPM roles now
+- Program Manager @ Purdue Data Mine (Jan 2026–Apr 2026 & Sep 2026–Present), West Lafayette, IN — promoted from Project Manager
+- Former Assistant Manager (3 roles) @ OLA Electric (3 yrs), Bengaluru, India
 - Master of Engineering Management @ Purdue University (GPA 3.86, May 2027)
 - B.E. Electronics & Instrumentation @ BITS Pilani, India (May 2022)
 - LinkedIn: linkedin.com/in/neeraj-karumanchi/
 - Email: neeraj.karumanchi12@gmail.com
 - Phone: +1 (765) 409-0871
 - GitHub: neeraj12-byte
+- Current base: West Lafayette, IN (Apple internship ended, back at Purdue)
 
 ---
 
@@ -174,7 +176,7 @@ Portfolio-Website/
 │   │   ├── projects.js             ← 4 projects with color/icon fields
 │   │   ├── skills.js               ← 3 skill groups
 │   │   ├── certifications.js       ← 4 Anthropic certs with description field
-│   │   ├── testimonials.js         ← 4 LinkedIn recommendations
+│   │   ├── testimonials.js         ← 5 LinkedIn recommendations
 │   │   └── life.js                 ← 8 photos with captions and tags
 │   ├── App.jsx
 │   ├── main.jsx
@@ -378,3 +380,16 @@ Repo was renamed from `Portfolio-Website` → `neeraj12-byte.github.io` on July 
   5. Updated git remote to `git@github.com:neeraj12-byte/neeraj12-byte.github.io.git`
   6. Decided NOT to change GitHub username to `neerajkarumanchi` — keeping `neeraj12-byte`
   7. Future option: add custom domain (e.g. `neerajkarumanchi.com`) pointing to GitHub Pages
+- **Session 6 (Sep 11)**: Resume re-sync — new resume PDF replaced the old one at repo root (Apple internship now shows as completed May–Aug 2026, seeking full-time PM/TPM roles):
+  1. Copied new resume PDF into `public/Neeraj Karumanchi.pdf` (build/download source)
+  2. `index.html`: fixed stale `/Portfolio-Website/` favicon + OG/Twitter URLs left over from the July rename (they were never updated then), reworded meta description/titles to "ex-Apple" since the internship ended
+  3. `experience.js` — Apple: period changed to `May 2026 – Aug 2026`, all 4 bullets rewritten verbatim from the new resume (18/36 projects, $1B revenue protected, 125-project status tool, Claude Code work-breakdown skill)
+  4. `experience.js` — OLA: **fixed a metrics mix-up that predates this session** — the ABS subrole previously listed the EV Charger's numbers ($2.8M/NPS+22.6/CAC-16.4%, none of which are in the actual resume) and the Charger subrole listed ABS's unit count (22K). Corrected: Charger = $3M saved / 30,000 units / 10 vendors; ABS = 22K units / 12% faster / patent filed / 99.2% accuracy. Vehicle OS bullet enriched with resume's $100K savings + 90% issue resolution stats
+  5. `experience.js` — Purdue Data Mine: role `Project Manager` → `Program Manager (Prev. Project Manager)`, period extended to `Jan 2026 – Apr 2026 & Sep 2026 – Present`, bullets replaced with resume's mentoring (5 student PMs) + 9-student hydrogen platform (20,000+ freight trips) bullets
+  6. `highlights.js` — same ABS/Charger mix-up fixed here too; "MCP + Agents" card replaced with the Claude Code work-breakdown stat (48h→4h); Apple card retitled "$1B Protected"
+  7. `skills.js` — replaced the 3 old groups (Program Mgmt / **Product Management** / Technical & AI) with the resume's 3 groups (Program Management / Technical & AI / **Tools**) — the Product Management category (A/B testing, user research, etc.) is no longer on the resume and was dropped from the site to stay in sync; flagged to user in case that was intentional site-only content
+  8. `Hero.jsx` — removed the now-stale "Seeking Fall 2026 Internships" pill (that internship already happened and ended), kept a single "Seeking Full-time Program/Project Manager Roles" pill; subtitle changed from "EPM Intern · Apple · Cupertino, CA" to "M.E.M. Candidate, Purdue · Ex-Apple EPM Intern"
+  9. `Contact.jsx` — subtext changed from "seeking a Fall 2026 EPM or PM internship" to "seeking full-time Program/Project Manager roles"; location changed from "Based in Cupertino, CA" to "Based in West Lafayette, IN"
+  10. `About.jsx` — fixed the same OLA numbers ($2.8M→$3M, 22,000 chargers→30,000 chargers, "MOVE OS"→"Vehicle OS" to match resume naming), rewrote the closing paragraph to reflect that the Apple internship is finished and Neeraj is back at Purdue finishing the Master's/mentoring Data Mine while job-searching
+  11. **Resolved**: user sent a screenshot of a 5th LinkedIn recommendation (Maxim Todorov, Sr. Manager TPM at Apple, Aug 21 2026, "managed Neeraj directly"). Cropped his avatar out of the screenshot with Pillow (`pip3 install Pillow` — not preinstalled) and saved to `Photos/maxim-todorov.jpg`; added as the first entry in `testimonials.js`. Testimonials subtitle in `Testimonials.jsx` updated from "at OLA Electric, Purdue, and BITS Pilani" to "at Apple, OLA Electric, and Purdue" since Apple is now represented
+  12. **Resolved — no-op**: checked the untracked `Logos/` folder at repo root byte-for-byte (md5) against `src/assets/logos/` — all 5 files are identical duplicates of what's already live on the site, not updated logos. Left the folder in place (unreferenced, harmless) since user didn't ask to delete it

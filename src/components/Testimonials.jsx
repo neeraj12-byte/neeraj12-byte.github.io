@@ -20,7 +20,7 @@ export default function Testimonials() {
 
         <FadeIn delay={0.15}>
           <p className="font-sans text-sm text-[#6B6B6B] -mt-8 mb-10">
-            From the people I've worked with, at OLA Electric, Purdue, and BITS Pilani.
+            From the people I've worked with, at Apple, OLA Electric, and Purdue.
           </p>
 
           {/* Card */}

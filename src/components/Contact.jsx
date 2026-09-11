@@ -12,10 +12,10 @@ export default function Contact() {
             Let's make<br />something happen.
           </h2>
           <p className="font-sans text-base text-white/60 mb-3 max-w-lg mx-auto">
-            Actively seeking a Fall 2026 EPM or PM internship. Always happy to talk AI, EV systems, poker strategy, or the fastest route between US states.
+            Actively seeking full-time Program/Project Manager roles. Always happy to talk AI, EV systems, poker strategy, or the fastest route between US states.
           </p>
           <p className="font-sans text-xs text-white/30 mb-12">
-            Based in Cupertino, CA · Open to remote & relocation
+            Based in West Lafayette, IN · Open to remote & relocation
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
