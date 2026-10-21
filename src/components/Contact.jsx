@@ -3,7 +3,7 @@ import FadeIn from './FadeIn'
 export default function Contact() {
   return (
     <section id="contact" className="py-20 md:py-32 bg-[#1C1C1E] scroll-mt-16">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+      <div className="max-w-4xl mx-auto px-safe text-center">
         <FadeIn>
           <p className="font-sans text-xs uppercase tracking-[0.2em] text-[#A07640] mb-5">
             Let's Connect
@@ -12,10 +12,10 @@ export default function Contact() {
             Let's make<br />something happen.
           </h2>
           <p className="font-sans text-base text-white/60 mb-3 max-w-lg mx-auto">
-            Actively seeking full-time Program/Project Manager roles. Always happy to talk AI, EV systems, poker strategy, or the fastest route between US states.
+            Actively seeking Program and Product Manager roles, both internships and full-time. Always happy to talk AI, EV systems, poker strategy, or the fastest route between US states.
           </p>
           <p className="font-sans text-xs text-white/30 mb-12">
-            Based in West Lafayette, IN · Open to remote & relocation
+            Based in West Lafayette, IN · Open to remote & relocation · Flexible graduation, March–December 2027
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">

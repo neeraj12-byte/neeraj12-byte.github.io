@@ -7,8 +7,8 @@ const aiHighlights = new Set()
 export default function Skills() {
   return (
     <section id="skills" className="py-16 md:py-24 bg-[#F8F4E8] scroll-mt-16">
-      <div className="max-w-6xl mx-auto px-6">
-        <SectionHeading label="Skills" title="What I work with." />
+      <div className="max-w-6xl mx-auto px-safe">
+        <SectionHeading index="06" label="Skills" title="What I work with." />
         <div className="space-y-10">
           {skills.map((group, i) => (
             <FadeIn key={group.category} delay={i * 0.08}>

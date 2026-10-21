@@ -23,8 +23,8 @@ const topBarColors = {
 export default function Highlights() {
   return (
     <section id="highlights" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <SectionHeading label="By the numbers" title="Impact, at a glance." />
+      <div className="max-w-6xl mx-auto px-safe">
+        <SectionHeading index="01" label="By the numbers" title="Impact, at a glance." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {highlights.map((h, i) => (
             <FadeIn key={h.title} delay={i * 0.07}>

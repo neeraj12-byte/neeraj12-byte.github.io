@@ -3,6 +3,9 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* iOS inflates text when rotating to landscape unless this is pinned */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -11,10 +14,24 @@
     color: #1C1C1E;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* No section should ever be able to push the page sideways on a phone */
+    overflow-x: hidden;
+    /* Kill the grey flash Android Chrome paints over tapped links */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Locked while the mobile nav drawer is open */
+  body.nav-open {
+    overflow: hidden;
+    touch-action: none;
   }
 
   h1, h2, h3 {
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  }
+
+  img {
+    max-width: 100%;
   }
 
   *:focus-visible {
@@ -31,5 +48,36 @@
 
   .font-sans {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Full viewport height that ignores mobile Safari's collapsing URL bar.
+     The vh line is the fallback for browsers without svh. */
+  .min-h-screen-safe {
+    min-height: calc(100vh - 4rem);
+    min-height: calc(100svh - 4rem);
+  }
+
+  /* Keeps fixed/bottom chrome clear of the notch and home indicator */
+  .px-safe {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
+
+  .pb-safe {
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

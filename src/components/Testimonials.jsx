@@ -14,9 +14,9 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" className="py-16 md:py-24 bg-[#F8F4E8] scroll-mt-16">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-safe">
 
-        <SectionHeading label="Testimonials" title="What they say." />
+        <SectionHeading index="09" label="Testimonials" title="What they say." />
 
         <FadeIn delay={0.15}>
           <p className="font-sans text-sm text-[#6B6B6B] -mt-8 mb-10">

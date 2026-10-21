@@ -5,8 +5,8 @@ import { certifications } from '../data/certifications'
 export default function Certifications() {
   return (
     <section id="certifications" className="py-24 bg-white scroll-mt-16">
-      <div className="max-w-6xl mx-auto px-6">
-        <SectionHeading label="Certifications" title="Staying at the edge." />
+      <div className="max-w-6xl mx-auto px-safe">
+        <SectionHeading index="07" label="Certifications" title="Staying at the edge." />
 
         <FadeIn delay={0.05}>
           <p className="font-sans text-sm text-[#6B6B6B] -mt-8 mb-12 max-w-2xl leading-relaxed">

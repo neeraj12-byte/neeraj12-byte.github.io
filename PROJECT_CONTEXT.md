@@ -1,16 +1,16 @@
 # Portfolio Website — Project Context
 > Read this file at the start of any session to restore full context.
-> Last updated: September 11, 2026
+> Last updated: October 20, 2026 (Session 9)
 
 ---
 
 ## Who This Is For
 **Neeraj Karumanchi**
-- Engineering Program Manager Intern @ Apple, Cupertino, CA (May 2026–Aug 2026, completed) — seeking full-time PM/TPM roles now
+- Engineering Program Manager Intern @ Apple, Cupertino, CA (May 2026–Aug 2026, completed) — seeking Program & Product Manager roles now, both internships and full-time
 - Program Manager @ Purdue Data Mine (Jan 2026–Apr 2026 & Sep 2026–Present), West Lafayette, IN — promoted from Project Manager
 - Former Assistant Manager (3 roles) @ OLA Electric (3 yrs), Bengaluru, India
-- Master of Engineering Management @ Purdue University (GPA 3.86, May 2027)
-- B.E. Electronics & Instrumentation @ BITS Pilani, India (May 2022)
+- Master of Engineering Management @ Purdue University (GPA 3.86). **Flexible graduation between March & December 2027** (not a single fixed date — the full range is open depending on the opportunity).
+- B.E. Electrical Engineering @ BITS Pilani, India (May 2022)
 - LinkedIn: linkedin.com/in/neeraj-karumanchi/
 - Email: neeraj.karumanchi12@gmail.com
 - Phone: +1 (765) 409-0871
@@ -20,7 +20,7 @@
 ---
 
 ## Purpose
-A **personal brand portfolio website** — not just a resume in HTML. It tells the full story: work, journey, travels, personality, hobbies. Primary goal: personal branding. Secondary: job applications (seeking **Fall 2026 EPM/PM internship**).
+A **personal brand portfolio website** — not just a resume in HTML. It tells the full story: work, journey, travels, personality, hobbies. Primary goal: personal branding. Secondary: job applications (seeking **Program & Product Manager roles, internships and full-time**; flexible graduation between March & December 2027).
 
 ---
 
@@ -154,12 +154,13 @@ Portfolio-Website/
 ├── src/
 │   ├── components/
 │   │   ├── FadeIn.jsx              ← shared scroll animation wrapper
-│   │   ├── SectionHeading.jsx      ← label + serif title + animated bronze underline
+│   │   ├── SectionHeading.jsx      ← `NN / LABEL` + serif title + animated bronze underline
 │   │   ├── Navbar.jsx              ← sticky, frosted on scroll, mobile hamburger (44px tap target)
 │   │   ├── Hero.jsx                ← 2 availability pills, name, tagline, photo, LogoChip logo strip
 │   │   ├── Highlights.jsx          ← 6 stat cards with color top bar + SectionHeading
 │   │   ├── About.jsx               ← narrative + 6 Lucide-icon hobby tiles
-│   │   ├── Experience.jsx          ← timeline (desktop) + flat stack (mobile), 4 primary + 4 secondary, CompanyLogo
+│   │   ├── Experience.jsx          ← scroll-drawn timeline spine, metric tiles, ProgressionRail (OLA)
+│   │   ├── CountUp.jsx             ← metric numeral that counts up on scroll into view
 │   │   ├── Projects.jsx            ← 4 cards with gradient cover + Lucide icons
 │   │   ├── Education.jsx           ← 2 cards with school color badges
 │   │   ├── Skills.jsx              ← pill tags, all uniform (no AI tint)
@@ -179,9 +180,10 @@ Portfolio-Website/
 │   │   ├── testimonials.js         ← 5 LinkedIn recommendations
 │   │   └── life.js                 ← 8 photos with captions and tags
 │   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css                   ← Tailwind v4 import, font fallbacks, focus-visible
-├── index.html                      ← Google Fonts, OG tags, theme-color
+│   ├── main.jsx                    ← wraps App in <MotionConfig reducedMotion="user">
+│   └── index.css                   ← Tailwind v4, font fallbacks, focus-visible, mobile/iOS hardening,
+│                                      .min-h-screen-safe / .px-safe / .pb-safe, reduced-motion block
+├── index.html                      ← Google Fonts, OG tags, theme-color, viewport-fit=cover
 ├── vite.config.js                  ← base: '/Portfolio-Website/', react + tailwind plugins
 ├── package.json                    ← type: module, scripts: dev/build/predeploy/deploy
 └── .gitignore                      ← node_modules, dist, .DS_Store
@@ -227,14 +229,25 @@ Portfolio-Website/
 - Hobby tiles: 6 cards with Lucide icons (Plane, Trophy, Waves, Spade, Music, Dumbbell)
 
 ### 5. Experience
-- **Primary (4 entries, timeline on desktop)**:
-  1. Apple — EPM Intern (May 2026–Present, Services Engineering Rights & Pricing)
-  2. OLA Electric — 3 subroles (ABS TPM / Charger Lead / Vehicle OS Dev)
-  3. Purdue Data Mine — Project Manager
-  4. Purdue Daniels — Student Consultant
-- Bullet points: outcome-first, metrics-led
-- **Secondary (4 condensed cards)**: NextLeap, Hourglass Research, JSW Steel, HWC
-- Timeline dot: `absolute left-0 top-7` with connecting line, hidden on mobile
+**Redesigned Oct 20, 2026 — graphic-led, no role titles, no bullets.** Every position now
+renders as company + period + location + a one-line serif tagline + a strip of animated
+metric tiles. Role titles (`role`) and bullet lists (`bullets`) were removed from the data
+model entirely, on the user's explicit instruction. If a future session needs the titles
+back, they are in `Neeraj Karumanchi.pdf` and in git history before this date.
+
+- **Primary (4 entries)**: Apple · OLA Electric · Purdue Data Mine · Purdue Daniels
+- Each entry carries: `tagline`, `metrics[{value,label}]`, `tags[]`, `accent` (hex)
+- `accent` per company — Apple `#1C1C1E`, OLA `#A07640`, Data Mine `#2563EB`,
+  Daniels `#7C3AED`. Drives the card's left edge, radial corner wash, metric rules and
+  timeline node. All four already exist in the Highlights palette, so no new colors.
+- OLA keeps its 3-role arc as a **`ProgressionRail`** graphic — a horizontal rail with
+  three nodes labelled by *program* (Vehicle OS / EV Charger / ABS Controls), not by title.
+- **Timeline spine (desktop only)**: bronze line that draws on scroll via
+  `useScroll` + `useSpring` on the timeline container, over a faint static track.
+- **Metric tiles** use `CountUp.jsx` — counts the numeral up on first scroll into view.
+  Strings with two numerals ("18/36") render static by design; so does reduced-motion.
+- **Secondary (4 condensed cards)**: NextLeap, Hourglass, JSW, HWC — now logo + company +
+  period + one `metric`/`metricLabel` pair + a one-line `note`. Role titles removed here too.
 
 ### 6. Projects
 - 4 cards with gradient cover (h-36) + centered Lucide icon
@@ -393,3 +406,29 @@ Repo was renamed from `Portfolio-Website` → `neeraj12-byte.github.io` on July 
   10. `About.jsx` — fixed the same OLA numbers ($2.8M→$3M, 22,000 chargers→30,000 chargers, "MOVE OS"→"Vehicle OS" to match resume naming), rewrote the closing paragraph to reflect that the Apple internship is finished and Neeraj is back at Purdue finishing the Master's/mentoring Data Mine while job-searching
   11. **Resolved**: user sent a screenshot of a 5th LinkedIn recommendation (Maxim Todorov, Sr. Manager TPM at Apple, Aug 21 2026, "managed Neeraj directly"). Cropped his avatar out of the screenshot with Pillow (`pip3 install Pillow` — not preinstalled) and saved to `Photos/maxim-todorov.jpg`; added as the first entry in `testimonials.js`. Testimonials subtitle in `Testimonials.jsx` updated from "at OLA Electric, Purdue, and BITS Pilani" to "at Apple, OLA Electric, and Purdue" since Apple is now represented
   12. **Resolved — no-op**: checked the untracked `Logos/` folder at repo root byte-for-byte (md5) against `src/assets/logos/` — all 5 files are identical duplicates of what's already live on the site, not updated logos. Left the folder in place (unreferenced, harmless) since user didn't ask to delete it
+- **Session 7 (Oct 20, 2026)**: Experience section rebuilt as graphics-led; reference site `likhithramesha.vercel.app` mined for ideas; mobile/iOS hardening pass:
+  1. **`experience.js` — data model changed.** `role` (all 4 primary + all 4 secondary) and `bullets` (including the 3 OLA subrole bullet lists) were **removed on the user's explicit instruction**. New per-entry fields: `tagline` (one serif line), `metrics[{value,label}]`, `tags[]`, `accent`. Every metric value is carried over verbatim from the old bullets — no numbers were invented. OLA's 3 subroles survive as `arc[{program,period}]` keyed on *program names* (Vehicle OS / EV Charger / ABS Controls) rather than job titles, so the 3-year progression is still legible without titles. Secondary entries now carry `metric`/`metricLabel`/`note`.
+  2. **Flagged to user**: dropping role titles means "Engineering Program Manager Intern" etc. no longer appear anywhere on the site, and that string is usually the first thing a recruiter or ATS looks for. User was told how to restore them (one line per entry); they are still in the resume PDF and in git history before this commit.
+  3. **`Experience.jsx` rewritten.** Scroll-drawn bronze timeline spine (`useScroll` + `useSpring` on the container, desktop only) over a faint static track; per-company accent drives a 3px left card edge, a radial corner wash, the timeline node, and the rule above each metric; `ProgressionRail` sub-component for OLA's 3-program arc; metric strip; pill `tags` row.
+  4. **`CountUp.jsx` (new)** — metric numerals count up on first scroll into view, preserving prefix/suffix (`$1B` counts 0→1, `50M+` counts 0→50). Deliberately renders static when the string holds two numerals (`18/36`) or when the user prefers reduced motion.
+  5. **Numbered section headings** — the one device worth taking from the reference site. `SectionHeading` gained an optional `index` prop rendering `03 / EXPERIENCE`. Wired through all 9 sections in App.jsx order: Highlights 01, About 02, Experience 03, Projects 04, Education 05, Skills 06, Certifications 07, Life 08, Testimonials 09. **If a section is ever added, moved, or removed, renumber the rest.**
+  6. **Mobile/iOS/Android hardening**:
+     - `index.css`: `-webkit-text-size-adjust: 100%` (stops iOS inflating text on landscape rotation), `overflow-x: hidden` on body, `-webkit-tap-highlight-color: transparent` (kills Android Chrome's grey tap flash), `img { max-width: 100% }`, a `prefers-reduced-motion` block, and three new utilities: `.min-h-screen-safe` (`100svh` with a `100vh` fallback — fixes the hero jumping when mobile Safari's URL bar collapses), `.px-safe` / `.pb-safe` (`max(1.5rem, env(safe-area-inset-*))`).
+     - `.px-safe` replaced `px-6` on all 11 section containers + the navbar; `index.html` viewport gained `viewport-fit=cover` so those insets actually resolve.
+     - `main.jsx` wraps `<App/>` in `<MotionConfig reducedMotion="user">` — CSS alone cannot stop Framer Motion's JS-driven transforms.
+     - `Navbar.jsx`: body scroll-lock while the drawer is open (`body.nav-open`, matters most on iOS Safari), drawer auto-closes when the viewport crosses into the desktop breakpoint, scroll listener marked `{ passive: true }`.
+  7. **Verified in Chrome** at 1440px desktop and in 390px (iPhone) / 360px (Android) iframes: no horizontal overflow at any width (`documentElement.scrollWidth === innerWidth`), OLA's 3-node rail still fits one line at 360px, metrics reflow 4-across → 2×2, no console errors. The only element reporting a wider box is the hero photo's `scale(1.85)` transform, which its `rounded-full overflow-hidden` parent clips — not a real overflow.
+  8. **Not done / user's call**: not committed and **not deployed** — `npm run deploy` still has to be run separately to push this live.
+- **Session 8 (Oct 20, 2026)**: Resume summary sync — graduation timeline changed and job search broadened to Program *and* Product Manager, internships *and* full-time:
+  1. `experience.js`/resume source of truth: graduation is now **March 2027 for full-time roles, flexible/extendable to December 2027** to stay eligible for Spring/Summer 2027 internships. Previously the site said a flat "May 2027".
+  2. `Hero.jsx` — availability pill split back into two: green "Open to Internships & Full-time Roles" (status) + bronze "Program & Product Manager" (role type), replacing the single "Seeking Full-time Program/Project Manager Roles" pill. Subtitle now reads "M.E.M. Candidate, Purdue (Grad Mar 2027) · Ex-Apple EPM Intern".
+  3. `Education.jsx` — Purdue `period` changed `Aug 2025 – May 2027` → `Aug 2025 – Mar 2027`; new `graduationNote` field (italic, under the period line) reads "Flexible to Dec 2027 for Spring/Summer 2027 internship eligibility". BITS card renders a blank spacer in its place to keep both cards' internal layout aligned.
+  4. `About.jsx` — closing paragraph rewritten to say he's looking for his "next Program or Product Manager role, internship or full-time," graduating March 2027, flexible to December 2027.
+  5. `Contact.jsx` — main CTA line now "Actively seeking Program and Product Manager roles, both internships and full-time"; location line gained "· Graduating March 2027, flexible to December 2027".
+  6. `index.html` — meta description, OG, and Twitter tags updated from "Engineering Program Manager" to "Program & Product Manager", graduation date added, internship+full-time framing added.
+  7. `PROJECT_CONTEXT.md` "Who This Is For" updated to match (GPA line, seeking line).
+  8. Not committed, not deployed — same as prior session, `npm run deploy` is a separate step.
+- **Session 9 (Oct 20, 2026)**: Two corrections to Session 8's resume sync:
+  1. **Graduation framing fixed.** It is not "March 2027, flexible to December 2027" (implying March is the real date and December is a fallback) — it's a genuinely **flexible graduation anywhere between March and December 2027**, timing open either way depending on the opportunity. Reworded everywhere: `Hero.jsx` subtitle → "Grad Mar–Dec 2027"; `Education.jsx` Purdue `period` → `Aug 2025 – 2027` with `graduationNote` → "Flexible graduation between March & December 2027"; `About.jsx` closing line; `Contact.jsx` location line → "Flexible graduation, March–December 2027"; `index.html` OG/Twitter descriptions.
+  2. **BITS Pilani undergrad major corrected**: `B.E. Electronics & Instrumentation` → **`B.E. Electrical Engineering`**. This was wrong since at least Session 6 (Sep 11) and had propagated into `PROJECT_CONTEXT.md`'s own "Who This Is For" section — fixed there too. Coursework chips (DSP, Control Systems, Microprocessors, VLSI, Probability & Statistics) were left as-is; they still read as plausible EE coursework and the user only flagged the major name, not the coursework list — worth a quick confirm next time education content comes up.
+  3. Not committed, not deployed.

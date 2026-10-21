@@ -38,12 +38,12 @@ const hobbies = [
 export default function About() {
   return (
     <section id="about" className="py-24 bg-[#F8F4E8] scroll-mt-16">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-safe">
         <div className="grid md:grid-cols-2 gap-16 items-start">
 
           {/* Left — narrative */}
           <div>
-            <SectionHeading label="About" title="The story so far." />
+            <SectionHeading index="02" label="About" title="The story so far." />
             <FadeIn delay={0.1}>
               <div className="font-sans text-[#6B6B6B] text-base leading-loose space-y-5">
                 <p>
@@ -61,7 +61,7 @@ export default function About() {
                   <span className="text-[#1C1C1E] font-medium">Purdue</span>
                   , a chance to build the strategic layer, how to think about systems, not just execute inside them, followed by a summer running Pricing Platform programs and shipping AI agents at{' '}
                   <span className="text-[#1C1C1E] font-medium">Apple in Cupertino</span>
-                  . Now I'm back at Purdue finishing my Master's, mentoring the next cohort of Data Mine PMs, and looking for where I land next full-time.
+                  . Now I'm back at Purdue finishing my Master's, mentoring the next cohort of Data Mine PMs, and looking for my next Program or Product Manager role, internship or full-time. Flexible graduation between March and December 2027, whatever fits the right opportunity.
                 </p>
                 <p>
                   Outside work, I run the same playbook I use at a poker table: read the table, manage risk, and make decisions with incomplete information. I play basketball (school team back in the day), travel every chance I get, 11 states in under a year, and yes, I've gone scuba diving. Quietest place I've ever been.

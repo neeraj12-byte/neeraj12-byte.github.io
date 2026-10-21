@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-[#1C1C1E] border-t border-white/8 py-8">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="max-w-6xl mx-auto px-safe flex flex-col md:flex-row items-center justify-between gap-4">
         <a
           href="#hero"
           className="font-serif text-xl font-semibold text-white/50 hover:text-white/80 transition-colors duration-200"

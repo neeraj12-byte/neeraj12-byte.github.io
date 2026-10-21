@@ -14,8 +14,22 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Stop the page behind the drawer from scrolling (iOS Safari especially)
+  useEffect(() => {
+    document.body.classList.toggle('nav-open', menuOpen)
+    return () => document.body.classList.remove('nav-open')
+  }, [menuOpen])
+
+  // Close the drawer if the viewport grows into the desktop layout
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)')
+    const onChange = (e) => e.matches && setMenuOpen(false)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
   }, [])
 
   return (
@@ -26,7 +40,7 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-safe h-16 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#hero"
@@ -84,7 +98,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div className="md:hidden px-6 pb-6 pt-2 flex flex-col gap-1 border-t border-[#1C1C1E]/8 bg-[#F8F4E8]/95 backdrop-blur-md">
+        <div className="md:hidden px-safe pb-safe pt-2 flex flex-col gap-1 border-t border-[#1C1C1E]/8 bg-[#F8F4E8]/95 backdrop-blur-md">
           {links.map((link) => (
             <a
               key={link.href}

@@ -16,8 +16,8 @@ export default function Life() {
 
   return (
     <section id="life" className="py-24 bg-[#F8F4E8] scroll-mt-16">
-      <div className="max-w-6xl mx-auto px-6">
-        <SectionHeading label="Life" title="Beyond the brief." />
+      <div className="max-w-6xl mx-auto px-safe">
+        <SectionHeading index="08" label="Life" title="Beyond the brief." />
         <FadeIn delay={0.05}>
           <p className="font-sans text-base text-[#6B6B6B] mb-12 max-w-xl">
             11 US states in under a year. Always learning, always moving, on a court, in the water, or at a new city.

@@ -13,8 +13,8 @@ const iconMap = {
 export default function Projects() {
   return (
     <section id="projects" className="py-24 bg-[#F8F4E8] scroll-mt-16">
-      <div className="max-w-6xl mx-auto px-6">
-        <SectionHeading label="Projects" title="Things I've shipped." />
+      <div className="max-w-6xl mx-auto px-safe">
+        <SectionHeading index="04" label="Projects" title="Things I've shipped." />
         <div className="grid sm:grid-cols-2 gap-6">
           {projects.map((p, i) => {
             const Icon = iconMap[p.icon]

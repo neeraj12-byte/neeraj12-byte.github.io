@@ -9,9 +9,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-[calc(100vh-64px)] flex flex-col justify-center bg-[#F8F4E8] pt-16"
+      className="min-h-screen-safe flex flex-col justify-center bg-[#F8F4E8] pt-16"
     >
-      <div className="max-w-6xl mx-auto px-6 w-full">
+      <div className="max-w-6xl mx-auto px-safe w-full">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16 py-16 md:py-20">
 
           {/* Left — Text */}
@@ -26,7 +26,12 @@ export default function Hero() {
               <div className="inline-flex items-center gap-2 bg-[#059669]/10 border border-[#059669]/20 rounded-full px-3 py-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#059669] animate-pulse" />
                 <span className="font-sans text-xs font-medium text-[#059669]">
-                  Seeking Full-time Program/Project Manager Roles
+                  Open to Internships & Full-time Roles
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-[#A07640]/10 border border-[#A07640]/20 rounded-full px-3 py-1.5">
+                <span className="font-sans text-xs font-medium text-[#A07640]">
+                  Program & Product Manager
                 </span>
               </div>
             </motion.div>
@@ -46,7 +51,7 @@ export default function Hero() {
               transition={{ duration: 0.4, delay: 0.25 }}
               className="font-sans text-[17px] text-[#6B6B6B] mb-6"
             >
-              M.E.M. Candidate, Purdue · Ex-Apple EPM Intern
+              M.E.M. Candidate, Purdue (Grad Mar–Dec 2027) · Ex-Apple EPM Intern
             </motion.p>
 
             <motion.p
